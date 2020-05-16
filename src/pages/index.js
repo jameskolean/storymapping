@@ -4,6 +4,7 @@ import StickyNote from "../components/StickyNote"
 import { graphql } from "gatsby"
 import Typography from "@material-ui/core/Typography"
 import AddIcon from "@material-ui/icons/Add"
+import IconButton from "@material-ui/core/IconButton"
 import {
   Container,
   Box,
@@ -28,13 +29,14 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontSize: "inherit",
   },
+  root: {
+    height: 132,
+  },
 }))
 
 export default ({ data }) => {
-  console.log(data)
-
-  const [board, setBoard] = useState(data.allDataJson.edges[0].node.board)
   const title = data.allDataJson.edges[0].node.title
+  const [board, setBoard] = useState(data.allDataJson.edges[0].node.board)
 
   console.log("New Board", board)
 
@@ -79,16 +81,20 @@ export default ({ data }) => {
                 <TableCell className={classes.cell} key={taskIndex}>
                   <StickyNote
                     onClose={() => deleteTask(taskIndex)}
+                    type="feature"
                     text={task}
                   />
                 </TableCell>
               ))}
               <TableCell
+                className={classes.root}
                 onClick={() =>
                   setBoard(board.concat({ task: "", stories: [] }))
                 }
               >
-                <AddIcon />
+                <IconButton>
+                  <AddIcon />
+                </IconButton>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -109,8 +115,13 @@ export default ({ data }) => {
                         </TableRow>
                       ))}
                       <TableRow>
-                        <TableCell onClick={() => addStory(taskIndex)}>
-                          <AddIcon />
+                        <TableCell
+                          className={classes.root}
+                          onClick={() => addStory(taskIndex)}
+                        >
+                          <IconButton>
+                            <AddIcon />
+                          </IconButton>
                         </TableCell>
                       </TableRow>
                     </TableBody>

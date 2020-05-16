@@ -19,21 +19,6 @@ module.exports = {
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
+    `gatsby-transformer-remark`,
   ],
-  // Customize your site metadata:
-  siteMetadata: {
-    title: `My Blog Title`,
-    author: `My Name`,
-    description: `My site description...`,
-    social: [
-      {
-        name: `twitter`,
-        url: `https://twitter.com/gatsbyjs`,
-      },
-      {
-        name: `github`,
-        url: `https://github.com/gatsbyjs`,
-      },
-    ],
-  },
 }

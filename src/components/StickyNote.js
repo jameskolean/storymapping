@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
@@ -7,9 +7,15 @@ import CloseIcon from "@material-ui/icons/Close"
 import TextField from "@material-ui/core/TextField"
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    height: 150,
+  feature: {
+    height: 111,
     padding: theme.spacing(1),
+    backgroundColor: "azure",
+  },
+  story: {
+    height: 111,
+    padding: theme.spacing(1),
+    backgroundColor: "linen",
   },
   cardHeader: {
     height: 15,
@@ -23,19 +29,29 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function StickNote(props) {
+  const [isRaised, setRaised] = useState(false)
   const classes = useStyles()
+  const cardClass = props.type === "feature" ? classes.feature : classes.story
 
   return (
-    <Card className={classes.root}>
+    <Card className={cardClass} raised={isRaised}>
       <CardHeader
         className={classes.cardHeader}
         action={
-          <IconButton className={classes.closeButton}>
-            <CloseIcon onClick={props.onClose} />
+          <IconButton className={classes.closeButton} onClick={props.onClose}>
+            <CloseIcon />
           </IconButton>
         }
       />
-      <TextField rowsMax={4} multiline fullWidth defaultValue={props.text} />
+      <TextField
+        onFocus={() => setRaised(true)}
+        onBlur={() => setRaised(false)}
+        rows={4}
+        multiline
+        fullWidth
+        defaultValue={props.text}
+        InputProps={{ disableUnderline: true }}
+      />
     </Card>
   )
 }
