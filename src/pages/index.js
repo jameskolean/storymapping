@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import StickyNote from "../components/StickyNote"
 import { graphql } from "gatsby"
 import Typography from "@material-ui/core/Typography"
+import AddIcon from "@material-ui/icons/Add"
 import {
   Container,
   Box,
@@ -30,11 +31,11 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default ({ data }) => {
-  console.log(data);
-  
+  console.log(data)
+
   const [board, setBoard] = useState(data.allDataJson.edges[0].node.board)
   const title = data.allDataJson.edges[0].node.title
-  
+
   console.log("New Board", board)
 
   const deleteTask = taskIndex => {
@@ -87,7 +88,7 @@ export default ({ data }) => {
                   setBoard(board.concat({ task: "", stories: [] }))
                 }
               >
-                +
+                <AddIcon />
               </TableCell>
             </TableRow>
           </TableHead>
@@ -109,7 +110,7 @@ export default ({ data }) => {
                       ))}
                       <TableRow>
                         <TableCell onClick={() => addStory(taskIndex)}>
-                          +
+                          <AddIcon />
                         </TableCell>
                       </TableRow>
                     </TableBody>
