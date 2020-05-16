@@ -1,0 +1,48 @@
+{
+    "title": "Get To The Office Ready for work",
+    "board" :[
+    {
+      "task": "Wake Up!",
+      "stories": [
+        { "note": "Hear Alarm Sound" },
+        { "note": "Hit Snooze" },
+        { "note": "Hear Alarm Sound & Become Conscious" },
+        { "note": "Finally Wake Up" }
+      ]
+    },
+    {
+      "task": "Get Ready To Leave The House",
+      "stories": [
+        { "note": "Get Out Of Bed" },
+        { "note": "Clean up For The Day" },
+        { "note": "Get Dressed" }
+      ]
+    },
+    {
+      "task": "Have The Morning Coffee",
+      "stories": [
+        { "note": "Make Coffee" },
+        { "note": "Drink Coffee" },
+        { "note": "Wash Coffee Mug" }
+      ]
+    },
+    {
+      "task": "Commute To The Office",
+      "stories": [
+        { "note": "Walk To The Subway Train" },
+        { "note": "Take The Right Subway Train" },
+        { "note": "Read The Morning News" },
+        { "note": "Walk To The Office Building" }
+      ]
+    },
+    {
+      "task": "Get Settled In Start Work",
+      "stories": [
+        { "note": "Have The Morning Chit-Chat With Colleagues" },
+        { "note": "Have Second Coffee" },
+        { "note": "Get Working Station Ready" },
+        { "note": "Start Work" }
+      ]
+    }
+  ]
+}
