@@ -1,6 +1,5 @@
 module.exports = {
   plugins: [
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-theme-material-ui`,
     `gatsby-transformer-json`,
