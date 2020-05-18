@@ -6,15 +6,14 @@ import StickyNote from "../components/sticky-note"
 import Typography from "@material-ui/core/Typography"
 import AddIcon from "@material-ui/icons/Add"
 import IconButton from "@material-ui/core/IconButton"
+import Layout from "../templates/Layout"
 import {
-  Container,
   Box,
   Table,
   TableHead,
   TableBody,
   TableRow,
   TableCell,
-  TextField,
 } from "@material-ui/core"
 import Cards from "../components/cards.js"
 
@@ -51,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Index = ({ data }) => {
+const Index = () => {
   const [board, setBoard] = useState(null)
   const [title, setTitle] = useState("hello")
   useQuery(APOLLO_QUERY, {
@@ -87,7 +86,7 @@ const Index = ({ data }) => {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xl">
+    <Layout>
       <Typography variant="h4" component="h4">
         {title}
       </Typography>
@@ -129,24 +128,8 @@ const Index = ({ data }) => {
           </Table>
         </Box>
       )}
-    </Container>
+    </Layout>
   )
 }
+
 export default Index
-// export const query = graphql`
-//   query {
-//     allDataJson {
-//       edges {
-//         node {
-//           title
-//           board {
-//             task
-//             stories {
-//               note
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

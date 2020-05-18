@@ -1,19 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import StickyNote from "../components/sticky-note"
-//import { graphql } from "gatsby"
-import Typography from "@material-ui/core/Typography"
 import AddIcon from "@material-ui/icons/Add"
 import IconButton from "@material-ui/core/IconButton"
 import {
-  Container,
-  Box,
   Table,
-  TableHead,
   TableBody,
   TableRow,
   TableCell,
-  TextField,
 } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
